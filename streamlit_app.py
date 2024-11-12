@@ -8,7 +8,7 @@ with st.container():
   st.subheader("💵 Sube aquí el .csv de tu moxfield")
 
 with st.container():
-uploaded_file = st.file_uploader("Choose a file")
+  uploaded_file = st.file_uploader("Choose a file")
 if uploaded_file is not None:
     # To read file as bytes:
     bytes_data = uploaded_file.getvalue()
@@ -29,5 +29,4 @@ with st.container():
   st.subheader("🔍 Sube aquí el .txt de las cartas que están buscando ")
 
 with st.container():
-uploaded_file2 = st.file_uploader("Choose a file")
-
+  uploaded_file2 = st.file_uploader("Choose a file")
