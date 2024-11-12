@@ -39,4 +39,4 @@ archivo_txt = txt_data
 
 #uwuuwuwuwuwuwuwu
 # Leer el archivo de texto y dividir líneas
-palabras = archivo_txt.read().decode("utf-8").splitlines()
+palabras = archivo_txt.splitlines()
