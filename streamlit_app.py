@@ -3,7 +3,6 @@ import requests
 from PIL import Image
 from io import StringIO
 import pandas as pd
-import io
 
 with st.container():
   st.subheader("💵 Sube aquí el .csv de tu moxfield")
