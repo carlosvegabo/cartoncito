@@ -24,14 +24,26 @@ txt_data = None
 if uploaded_csv is not None:
     # Leer el archivo CSV en un DataFrame de pandas
     csv_data = pd.read_csv(uploaded_csv)
-    st.write("Archivo CSV cargado con éxito:")
+    st.write("Archivo CSV cargado con éxito")
 
 # Procesar archivo TXT
 if uploaded_txt is not None:
     # Leer el archivo TXT como texto
     txt_data = uploaded_txt.read().decode("utf-8")
-    st.write("Archivo TXT cargado con éxito:")
+    st.write("Archivo TXT cargado con éxito")
 
 # Guardar los datos en variables para su uso posterior
 archivo_csv = csv_data
 archivo_txt = txt_data
+
+with open(archivo_txt, 'r') as file:
+    palabras = file.read().splitlines()
+
+# Divide cada línea en dos partes usando el primer espacio
+split_palabras = [linea.split(None, 1) for linea in palabras]
+
+# Crea un DataFrame de Pandas
+dftxt = pd.DataFrame(split_palabras, columns=['Cantidad', 'Carta'])
+
+dftxt.head(1)
+
