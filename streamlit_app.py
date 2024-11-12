@@ -19,4 +19,3 @@ for uploaded_file in uploaded_files:
         
     elif uploaded_file.type == "text/csv":
         df = pd.read_csv(uploaded_file)
-        print(df)
