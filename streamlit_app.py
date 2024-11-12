@@ -34,10 +34,10 @@ if uploaded_txt is not None:
 
 # Guardar los datos en variables para su uso posterior
 archivo_csv = csv_data
-archivo_txt = txt_data
+txt_file = txt_data
 
 #uwuuwuwuwuwuwuwu
-if archivo_txt is not None:
+if txt_file is not None:
     # Leer el archivo de texto y dividir líneas
     palabras = txt_file.read().decode("utf-8").splitlines()
 
