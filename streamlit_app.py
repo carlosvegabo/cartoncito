@@ -38,5 +38,6 @@ archivo_csv = csv_data
 archivo_txt = txt_data
 
 #uwuuwuwuwuwuwuwu
-# Leer el archivo de texto y dividir líneas
-palabras = archivo_txt.splitlines()
+import io
+
+palabras = io.StringIO(txt_file.getvalue().decode("utf-8")).readlines()
