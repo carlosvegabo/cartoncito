@@ -27,6 +27,3 @@ if uploaded_file is not None:
 
 with st.container():
   st.subheader("🔍 Sube aquí el .txt de las cartas que están buscando ")
-
-with st.container():
-  uploaded_file2 = st.file_uploader("Choose a file")
