@@ -36,14 +36,24 @@ if uploaded_txt is not None:
 archivo_csv = csv_data
 archivo_txt = txt_data
 
-with open(archivo_txt, 'r') as file:
-    palabras = file.read().splitlines()
+#uwuuwuwuwuwuwuwu
+if archivo_txt is not None:
+    # Leer el archivo de texto y dividir líneas
+    palabras = txt_file.read().decode("utf-8").splitlines()
 
-# Divide cada línea en dos partes usando el primer espacio
-split_palabras = [linea.split(None, 1) for linea in palabras]
+    # Divide cada línea en dos partes usando el primer espacio
+    split_palabras = [linea.split(None, 1) for linea in palabras]
 
-# Crea un DataFrame de Pandas
-dftxt = pd.DataFrame(split_palabras, columns=['Cantidad', 'Carta'])
+    # Crear un DataFrame de Pandas
+    dftxt = pd.DataFrame(split_palabras, columns=['Cantidad', 'Carta'])
 
-dftxt.head(1)
+    # Mostrar el DataFrame en la aplicación
+    st.write("Contenido del archivo:")
+    st.dataframe(dftxt)
+
+    # Mostrar un resumen o primeros datos
+    st.write("Primeras filas del archivo:")
+    st.write(dftxt.head())
+
+
 
