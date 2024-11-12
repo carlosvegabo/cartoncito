@@ -33,6 +33,10 @@ if uploaded_txt is not None:
     st.write("Archivo TXT cargado con éxito")
     st.text(txt_data)  # Muestra el contenido del archivo TXT
 
+# Guardar los datos en variables para su uso posterior
+archivo_csv = csv_data
+archivo_txt = txt_data
+
 #uwuuwuwuwuwuwuwu
 # Leer el archivo de texto y dividir líneas
-palabras = txt_data.splitlines()
+palabras = archivo_txt.splitlines()
