@@ -5,21 +5,18 @@ from io import StringIO
 import pandas as pd
 
 with st.container():
-  st.subheader("💵 Sube aquí el .csv de tu moxfield")
+  st.subheader("💵 Sube aquí el .csv de tu moxfield y el .txt de las cartas que están buscando")
 
-uploaded_file = st.file_uploader("Choose a file")
-if uploaded_file is not None:
-    # To read file as bytes:
-    bytes_data = uploaded_file.getvalue()
-    
-    # To convert to a string based IO:
-    stringio = StringIO(uploaded_file.getvalue().decode("utf-8"))
-    
-    # To read file as string:
-    string_data = stringio.read()
-    
-    # Can be used wherever a "file-like" object is accepted:
-    dataframe = pd.read_csv(uploaded_file)
-    st.write(dataframe)
-with st.container():
-  st.subheader("💵 Sube aquí el .txt de las cartas que están buscando")
+# Obtener los archivos subidos
+uploaded_files = st.file_uploader("Subir archivos", accept_multiple_files=True)
+if uploaded_files is not None:
+    for uploaded_file in uploaded_files:
+        bytes_data = uploaded_file.read()   
+
+        # Determinar el tipo de archivo y procesarlo
+        if uploaded_file.type == "text/plain":
+            text_data = bytes_data.decode("utf-8")
+            
+        elif uploaded_file.type == "text/csv":
+            df = pd.read_csv(uploaded_file)
+            print(df)
