@@ -25,4 +25,5 @@ if uploaded_file is not None:
 with st.container():
   st.subheader("💵 Sube aquí el .txt de las cartas que están buscando")
 
-file2 = st.file_uploader("Choose a file")
+age = st.slider("How old are you?", 0, 130, 25)
+st.write("I'm ", age, "years old")
