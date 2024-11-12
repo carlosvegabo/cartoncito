@@ -34,5 +34,3 @@ if uploaded_txt is not None:
     st.text(txt_data)  # Muestra el contenido del archivo TXT
 
 #uwuuwuwuwuwuwuwu
-# Leer el archivo de texto y dividir líneas
-palabras = txt_data.read().decode("utf-8").splitlines()
