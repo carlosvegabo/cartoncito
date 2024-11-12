@@ -31,29 +31,10 @@ if uploaded_txt is not None:
     # Leer el archivo TXT como texto
     txt_data = uploaded_txt.read().decode("utf-8")
     st.write("Archivo TXT cargado con éxito")
+    st.text(txt_data)  # Muestra el contenido del archivo TXT
 
 # Guardar los datos en variables para su uso posterior
 archivo_csv = csv_data
 txt_file = txt_data
 
 #uwuuwuwuwuwuwuwu
-if txt_file is not None:
-    # Leer el archivo de texto y dividir líneas
-    palabras = txt_file.read().decode("utf-8").splitlines()
-
-    # Divide cada línea en dos partes usando el primer espacio
-    split_palabras = [linea.split(None, 1) for linea in palabras]
-
-    # Crear un DataFrame de Pandas
-    dftxt = pd.DataFrame(split_palabras, columns=['Cantidad', 'Carta'])
-
-    # Mostrar el DataFrame en la aplicación
-    st.write("Contenido del archivo:")
-    st.dataframe(dftxt)
-
-    # Mostrar un resumen o primeros datos
-    st.write("Primeras filas del archivo:")
-    st.write(dftxt.head())
-
-
-
