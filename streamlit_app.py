@@ -3,6 +3,7 @@ import requests
 from PIL import Image
 from io import StringIO
 import pandas as pd
+import io
 
 with st.container():
   st.subheader("💵 Sube aquí el .csv de tu moxfield")
@@ -38,6 +39,4 @@ archivo_csv = csv_data
 archivo_txt = txt_data
 
 #uwuuwuwuwuwuwuwu
-import io
-
 palabras = io.StringIO(txt_file.getvalue().decode("utf-8")).readlines()
