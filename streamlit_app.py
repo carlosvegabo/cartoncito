@@ -38,4 +38,4 @@ archivo_csv = csv_data
 archivo_txt = txt_data
 
 #uwuuwuwuwuwuwuwu
-split_palabras = [linea.split(None, 1) for linea in archivo_txt]
+data = pd.read_csv(archivo_txt, sep="\s+", engine='python')
