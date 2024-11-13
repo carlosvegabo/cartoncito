@@ -29,31 +29,12 @@ if uploaded_csv is not None:
 # Procesar archivo TXT
 if uploaded_txt is not None:
     # Leer el archivo TXT como texto
-    lines = uploaded_file.readlines()
+    txt_data = uploaded_txt.read().decode("utf-8")
     st.write("Archivo TXT cargado con éxito")
-    st.text(lines)  # Muestra el contenido del archivo TXT
+    st.text(txt_data)  # Muestra el contenido del archivo TXT
 
 # Guardar los datos en variables para su uso posterior
 archivo_csv = csv_data
 archivo_txt = txt_data
 
 #uwuuwuwuwuwuwuwu
-data = []
-for line in lines:
-    # Decodificar y limpiar la línea
-    line = line.decode("utf-8").strip()
-    
-    # Separar en dos partes en el primer espacio en blanco encontrado
-    parts = line.split(" ", 1)
-    
-    if len(parts) == 2:
-        data.append(parts)
-    else:
-        data.append([parts[0], ""])
-
-# Crear DataFrame
-df = pd.DataFrame(data, columns=["Cantidad", "Nombre"])
-
-# Mostrar el DataFrame
-st.write("DataFrame Resultante:")
-st.dataframe(df)
