@@ -38,7 +38,7 @@ lines = txt_data
 
 #uwuuwuwuwuwuwuwuuwuwuuwuw apartir de aqui hay logica
 # Procesar cada línea para separar en columnas
-if uploaded_txt is not None:
+if uploaded_txt and uploaded_csv is not None:
   data = []
   for line in lines:
       # Decodificar y limpiar la línea
