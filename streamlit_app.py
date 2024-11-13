@@ -24,7 +24,7 @@ txt_data = None
 if uploaded_csv is not None:
     # Leer el archivo CSV en un DataFrame de pandas
     csv_data = pd.read_csv(uploaded_csv)
-    st.write("Archivo CSV cargado con éxito con "+str(len(csv_data)+" registros")
+    st.write("Archivo CSV cargado con éxito con "+str(len(csv_data))+" registros")
 
 # Procesar archivo TXT
 if uploaded_txt is not None:
