@@ -31,7 +31,6 @@ if uploaded_txt is not None:
     # Leer el archivo TXT como texto
     txt_data = uploaded_txt.readlines()
     st.write("Archivo TXT cargado con éxito")
-  st.write(len(csv_data))
     #st.text(txt_data)  # Muestra el contenido del archivo TXT
 
 # Guardar los datos en variables para su uso posterior
