@@ -60,7 +60,10 @@ dftxt = pd.DataFrame(data, columns=["Cantidad", "Carta"])
 #logica para hacer el cruce de información
 coincidencias = dftxt['Carta'].isin(archivo_csv['Name']) 
 dftxt['Coincidencias'] = coincidencias
-
 dftxt_filtrado = dftxt[dftxt['Coincidencias'] == True]
+
+with st.container():
+  st.subheader("👽Resultado")
+
 st.dataframe(dftxt_filtrado)
 
