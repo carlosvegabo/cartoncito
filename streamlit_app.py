@@ -56,7 +56,7 @@ for line in lines:
 dftxt = pd.DataFrame(data, columns=["Cantidad", "Carta"])
 
 # Mostrar el DataFrame
-st.dataframe(df)
+st.dataframe(dftxt)
 
 #logica para hacer el cruce de información
 coincidencias = dftxt['Carta'].isin(archivo_csv['Name']) 
