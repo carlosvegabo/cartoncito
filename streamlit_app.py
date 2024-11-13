@@ -57,9 +57,7 @@ if uploaded_txt is not None:
   
   # Mostrar el DataFrame
   
-  with st.container():
-    st.subheader("Las cartas que se buscan son:")  
-  st.dataframe(dftxt)
+  #with st.container():     st.subheader("Las cartas que se buscan son:")  st.dataframe(dftxt)
     
   #logica para hacer el cruce de información
   coincidencias = dftxt['Carta'].isin(csv_data['Name']) 
