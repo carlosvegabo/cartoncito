@@ -38,4 +38,16 @@ archivo_csv = csv_data
 archivo_txt = txt_data
 
 #uwuuwuwuwuwuwuwu
-data = pd.read_csv(archivo_txt, sep="\s+", engine='python')
+# Crear una lista de listas para almacenar las filas
+rows = []
+# Iterar sobre cada línea del archivo
+for line in archivo_txt.splitlines():
+    # Separar la línea por el primer espacio en blanco
+    columns = line.split(maxsplit=1)
+    rows.append(columns)
+
+# Crear el DataFrame
+df = pd.DataFrame(rows, columns=["Columna 1", "Columna 2"])
+
+# Mostrar el DataFrame en la aplicación
+st.dataframe(df)
