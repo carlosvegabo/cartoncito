@@ -38,3 +38,4 @@ archivo_csv = csv_data
 archivo_txt = txt_data
 
 #uwuuwuwuwuwuwuwu
+line = txt_data.decode("utf-8").strip()
