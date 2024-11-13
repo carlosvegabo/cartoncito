@@ -70,3 +70,6 @@ if uploaded_txt and uploaded_csv is not None:
   
   st.dataframe(dftxt_filtrado)
 
+with st.container():
+  st.subheader("🫂 Si te fue de ayuda: Compra mis cartas https://www.moxfield.com/binders/fnovW3gPnkyNMiki0j5VbA o dona al yape 960754712")
+
