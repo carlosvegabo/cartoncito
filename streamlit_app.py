@@ -35,7 +35,26 @@ if uploaded_txt is not None:
 
 # Guardar los datos en variables para su uso posterior
 archivo_csv = csv_data
-archivo_txt = txt_data
+lines = txt_data
 
 #uwuuwuwuwuwuwuwu
+# Procesar cada línea para separar en columnas
+data = []
+for line in lines:
+    # Decodificar y limpiar la línea
+    line = line.decode("utf-8").strip()
+    
+    # Separar en dos partes en el primer espacio en blanco encontrado
+    parts = line.split(" ", 1)
+    
+    if len(parts) == 2:
+        data.append(parts)
+    else:
+        data.append([parts[0], ""])
 
+# Crear DataFrame
+df = pd.DataFrame(data, columns=["Cantidad", "Nombre"])
+
+# Mostrar el DataFrame
+st.write("DataFrame Resultante:")
+st.dataframe(df)
