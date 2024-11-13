@@ -4,6 +4,9 @@ from PIL import Image
 from io import StringIO
 import pandas as pd
 
+url = "https://www.loom.com/share/ff48ff0a9dc545639faf5aaa4e1cc617"
+st.write("¿Cómo funciona? 👉🏻 [link](%s)" % url)
+
 with st.container():
   st.subheader("💵 Sube aquí el .csv de tu moxfield")
 
