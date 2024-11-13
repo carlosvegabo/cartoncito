@@ -38,37 +38,38 @@ lines = txt_data
 
 #uwuuwuwuwuwuwuwuuwuwuuwuw apartir de aqui hay logica
 # Procesar cada línea para separar en columnas
-data = []
-for line in lines:
-    # Decodificar y limpiar la línea
-    line = line.decode("utf-8").strip()
-    
-    # Separar en dos partes en el primer espacio en blanco encontrado
-    parts = line.split(" ", 1)
-    
-    if len(parts) == 2:
-        data.append(parts)
-    else:
-        data.append([parts[0], ""])
-
-# Crear DataFrame
-dftxt = pd.DataFrame(data, columns=["Cantidad", "Carta"])
-
-# Mostrar el DataFrame
-
-with st.container():
-  st.subheader("Las cartas que se buscan son:")
+if uploaded_txt is not None:
+  data = []
+  for line in lines:
+      # Decodificar y limpiar la línea
+      line = line.decode("utf-8").strip()
+      
+      # Separar en dos partes en el primer espacio en blanco encontrado
+      parts = line.split(" ", 1)
+      
+      if len(parts) == 2:
+          data.append(parts)
+      else:
+          data.append([parts[0], ""])
   
-st.dataframe(dftxt)
-
-#logica para hacer el cruce de información
-coincidencias = dftxt['Carta'].isin(csv_data['Name']) 
-dftxt['Coincidencias'] = coincidencias
-dftxt_filtrado = dftxt[dftxt['Coincidencias'] == True]
-
-with st.container():
-  st.subheader("👽Resultado")
-  st.text("Las cartas que coinciden son:")
-
-st.dataframe(dftxt_filtrado)
+  # Crear DataFrame
+  dftxt = pd.DataFrame(data, columns=["Cantidad", "Carta"])
+  
+  # Mostrar el DataFrame
+  
+  with st.container():
+    st.subheader("Las cartas que se buscan son:")
+    
+  st.dataframe(dftxt)
+  
+  #logica para hacer el cruce de información
+  coincidencias = dftxt['Carta'].isin(csv_data['Name']) 
+  dftxt['Coincidencias'] = coincidencias
+  dftxt_filtrado = dftxt[dftxt['Coincidencias'] == True]
+  
+  with st.container():
+    st.subheader("👽Resultado")
+    st.text("Las cartas que coinciden son:")
+  
+  st.dataframe(dftxt_filtrado)
 
