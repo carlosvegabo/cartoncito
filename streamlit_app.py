@@ -53,7 +53,13 @@ for line in lines:
         data.append([parts[0], ""])
 
 # Crear DataFrame
-df = pd.DataFrame(data, columns=["Cantidad", "Carta"])
+dftxt = pd.DataFrame(data, columns=["Cantidad", "Carta"])
 
-# Mostrar el DataFrame
-st.dataframe(df)
+# Mostrar el DataFrame st.dataframe(df)
+
+#logica para hacer el cruce de información
+coincidencias = dftxt['Carta'].isin(df['Name']) 
+dftxt['Coincidencias'] = coincidencias
+
+dftxt_filtrado = dftxt[dftxt['Coincidencias'] == True]
+dftxt_filtrado.head()
