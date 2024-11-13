@@ -34,7 +34,6 @@ if uploaded_txt is not None:
     #st.text(txt_data)  # Muestra el contenido del archivo TXT
 
 # Guardar los datos en variables para su uso posterior
-archivo_csv = csv_data
 lines = txt_data
 
 #uwuuwuwuwuwuwuwuuwuwuuwuw apartir de aqui hay logica
@@ -63,7 +62,7 @@ with st.container():
 st.dataframe(dftxt)
 
 #logica para hacer el cruce de información
-coincidencias = dftxt['Carta'].isin(archivo_csv['Name']) 
+coincidencias = dftxt['Carta'].isin(csv_data['Name']) 
 dftxt['Coincidencias'] = coincidencias
 dftxt_filtrado = dftxt[dftxt['Coincidencias'] == True]
 
