@@ -38,16 +38,23 @@ archivo_csv = csv_data
 archivo_txt = txt_data
 
 #uwuuwuwuwuwuwuwu
-# Crear una lista de listas para almacenar las filas
-rows = []
-# Iterar sobre cada línea del archivo
-for line in archivo_txt.splitlines():
-    # Separar la línea por el primer espacio en blanco
-    columns = line.split(maxsplit=1)
-    rows.append(columns)
+# Procesar cada línea para separar en columnas
+data = []
+for line in archivo_txt:
+    # Decodificar y limpiar la línea
+    line = line.decode("utf-8").strip()
+    
+    # Separar en dos partes en el primer espacio en blanco encontrado
+    parts = line.split(" ", 1)
+    
+    if len(parts) == 2:
+        data.append(parts)
+    else:
+        data.append([parts[0], ""])
 
-# Crear el DataFrame
-df = pd.DataFrame(rows, columns=["Columna 1", "Columna 2"])
+# Crear DataFrame
+df = pd.DataFrame(data, columns=["Columna1", "Columna2"])
 
-# Mostrar el DataFrame en la aplicación
+# Mostrar el DataFrame
+st.write("DataFrame Resultante:")
 st.dataframe(df)
