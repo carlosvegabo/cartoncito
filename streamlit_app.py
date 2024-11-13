@@ -62,4 +62,5 @@ coincidencias = dftxt['Carta'].isin(archivo_csv['Name'])
 dftxt['Coincidencias'] = coincidencias
 
 dftxt_filtrado = dftxt[dftxt['Coincidencias'] == True]
-dftxt_filtrado.head()
+st.dataframe(dftxt_filtrado)
+
