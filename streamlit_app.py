@@ -29,7 +29,7 @@ if uploaded_csv is not None:
 # Procesar archivo TXT
 if uploaded_txt is not None:
     # Leer el archivo TXT como texto
-    txt_data = uploaded_txt.readlines()
+    txt_data = uploaded_txt.read().decode("utf-8")
     st.write("Archivo TXT cargado con éxito")
     st.text(txt_data)  # Muestra el contenido del archivo TXT
 
@@ -38,4 +38,4 @@ archivo_csv = csv_data
 archivo_txt = txt_data
 
 #uwuuwuwuwuwuwuwu
-line = archivo_txt.decode("utf-8").strip()
+parts = archivo_txt.split(" ", 1)
