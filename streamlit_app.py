@@ -31,13 +31,13 @@ if uploaded_txt is not None:
     # Leer el archivo TXT como texto
     txt_data = uploaded_txt.readlines()
     st.write("Archivo TXT cargado con éxito")
-    st.text(txt_data)  # Muestra el contenido del archivo TXT
+    #st.text(txt_data)  # Muestra el contenido del archivo TXT
 
 # Guardar los datos en variables para su uso posterior
 archivo_csv = csv_data
 lines = txt_data
 
-#uwuuwuwuwuwuwuwu
+#uwuuwuwuwuwuwuwuuwuwuuwuw apartir de aqui hay logica
 # Procesar cada línea para separar en columnas
 data = []
 for line in lines:
@@ -53,8 +53,7 @@ for line in lines:
         data.append([parts[0], ""])
 
 # Crear DataFrame
-df = pd.DataFrame(data, columns=["Cantidad", "Nombre"])
+df = pd.DataFrame(data, columns=["Cantidad", "Carta"])
 
 # Mostrar el DataFrame
-st.write("DataFrame Resultante:")
 st.dataframe(df)
