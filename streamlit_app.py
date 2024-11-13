@@ -24,13 +24,14 @@ txt_data = None
 if uploaded_csv is not None:
     # Leer el archivo CSV en un DataFrame de pandas
     csv_data = pd.read_csv(uploaded_csv)
-    st.write("Archivo CSV cargado con éxito")
+    st.write("Archivo CSV cargado con éxito con "+str(len(csv_data)+" registros")
 
 # Procesar archivo TXT
 if uploaded_txt is not None:
     # Leer el archivo TXT como texto
     txt_data = uploaded_txt.readlines()
     st.write("Archivo TXT cargado con éxito")
+  st.write(len(csv_data))
     #st.text(txt_data)  # Muestra el contenido del archivo TXT
 
 # Guardar los datos en variables para su uso posterior
@@ -60,8 +61,7 @@ if uploaded_txt is not None:
   with st.container():
     st.subheader("Las cartas que se buscan son:")  
   st.dataframe(dftxt)
-  st.write(len(csv_data))
-  
+    
   #logica para hacer el cruce de información
   coincidencias = dftxt['Carta'].isin(csv_data['Name']) 
   dftxt['Coincidencias'] = coincidencias
