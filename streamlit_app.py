@@ -11,13 +11,13 @@ with st.container():
   st.subheader("💵 Sube aquí el .csv de tu moxfield")
 
 # Subir archivo .csv
-uploaded_csv = st.file_uploader("Sube un archivo CSV", type="csv")
+uploaded_csv = st.file_uploader(" ", type="csv")
 
 with st.container():
   st.subheader("🔍 Sube aquí el .txt de las cartas que están buscando")
 
 # Subir archivo .txt
-uploaded_txt = st.file_uploader("Sube un archivo TXT", type="txt")
+uploaded_txt = st.file_uploader(" ", type="txt")
 
 # Variable para almacenar los datos cargados
 csv_data = None
