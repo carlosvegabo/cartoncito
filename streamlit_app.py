@@ -38,3 +38,4 @@ archivo_csv = csv_data
 archivo_txt = txt_data
 
 #uwuuwuwuwuwuwuwu
+split_palabras = [linea.split(None, 1) for linea in archivo_txt]
