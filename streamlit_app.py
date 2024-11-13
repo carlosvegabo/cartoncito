@@ -56,9 +56,11 @@ for line in lines:
 dftxt = pd.DataFrame(data, columns=["Cantidad", "Carta"])
 
 # Mostrar el DataFrame
+
+with st.container():
+  st.subheader("Las cartas que se buscan son:")
+  
 st.dataframe(dftxt)
-st.dataframe(archivo_csv)
-st.write(len(csv_data))
 
 #logica para hacer el cruce de información
 coincidencias = dftxt['Carta'].isin(archivo_csv['Name']) 
@@ -67,6 +69,7 @@ dftxt_filtrado = dftxt[dftxt['Coincidencias'] == True]
 
 with st.container():
   st.subheader("👽Resultado")
+  st.text("Las cartas que coinciden son:")
 
 st.dataframe(dftxt_filtrado)
 
