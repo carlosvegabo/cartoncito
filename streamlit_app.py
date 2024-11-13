@@ -71,7 +71,7 @@ if uploaded_txt and uploaded_csv is not None:
   st.dataframe(dftxt_filtrado)
 
   with st.container():
-    st.image("https://firebasestorage.googleapis.com/v0/b/lapapacalientee-yv83gz.appspot.com/o/lhi6pkg6ma341.webp?alt=media&token=4e380181-52df-4dd8-9097-23608fa4bea0")
+    st.image("https://firebasestorage.googleapis.com/v0/b/lapapacalientee-yv83gz.appspot.com/o/lhi6pkg6ma341.webp?alt=media&token=4e380181-52df-4dd8-9097-23608fa4bea0",width=250)
     st.subheader("Si te fue de ayuda:")
     st.write("Compra mis cartas https://www.moxfield.com/binders/fnovW3gPnkyNMiki0j5VbA o dona al yape 960 754 712")
 
