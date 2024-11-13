@@ -58,7 +58,7 @@ dftxt = pd.DataFrame(data, columns=["Cantidad", "Carta"])
 # Mostrar el DataFrame st.dataframe(df)
 
 #logica para hacer el cruce de información
-coincidencias = dftxt['Carta'].isin(df['Name']) 
+coincidencias = dftxt['Carta'].isin(archivo_csv['Name']) 
 dftxt['Coincidencias'] = coincidencias
 
 dftxt_filtrado = dftxt[dftxt['Coincidencias'] == True]
