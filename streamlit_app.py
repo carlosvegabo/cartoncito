@@ -38,4 +38,4 @@ archivo_csv = csv_data
 archivo_txt = txt_data
 
 #uwuuwuwuwuwuwuwu
-palabras = io.StringIO(txt_file.getvalue().decode("utf-8")).readlines()
+palabras = io.StringIO(archivo_txt.getvalue().decode("utf-8")).readlines()
