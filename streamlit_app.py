@@ -38,4 +38,4 @@ archivo_csv = csv_data
 archivo_txt = txt_data
 
 #uwuuwuwuwuwuwuwu
-palabras = io.StringIO(archivo_txt.getvalue().decode("utf-8")).readlines()
+split_palabras = [linea.split(None, 1) for linea in archivo_txt]
