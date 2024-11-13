@@ -11,7 +11,7 @@ with st.container():
 uploaded_csv = st.file_uploader("Sube un archivo CSV", type="csv")
 
 with st.container():
-  st.subheader("💵 Sube aquí el .txt de las cartas que están buscando")
+  st.subheader("🔍 Sube aquí el .txt de las cartas que están buscando")
 
 # Subir archivo .txt
 uploaded_txt = st.file_uploader("Sube un archivo TXT", type="txt")
